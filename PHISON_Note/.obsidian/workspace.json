@@ -8,42 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2eeae6dc88da89d1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Proper_Noun (專有名詞)/System Area.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b25f11e13611ed31",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "HW 相關/PCIE.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9e5ec29ee668c924",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Code_Flow/VUC_FTLPreformat().md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "b1c4d8d475898231",
             "type": "leaf",
             "state": {
@@ -54,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "fcafb80a138aedc8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "HW 相關/MISC.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -134,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "HW 相關/MISC.md",
+                "file": "Code_Flow/VUC_FTLPreformat().md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "HW 相關/MISC.md",
+                "file": "Code_Flow/VUC_FTLPreformat().md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "HW 相關/MISC.md"
+                "file": "Code_Flow/VUC_FTLPreformat().md"
               }
             }
           },
@@ -203,18 +154,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fcafb80a138aedc8",
+  "active": "b1c4d8d475898231",
   "lastOpenFiles": [
-    "HW 相關/PCIE.md",
+    "Code_Flow/接收 Host CMD.md",
+    "Freshman_Training",
     "HW 相關/MISC.md",
-    "Code_Flow/VUC_FTLPreformat().md",
+    "HW 相關/PCIE.md",
     "Proper_Noun (專有名詞)/DLMC ( Download Micro Code ).md",
+    "Code_Flow/VUC_FTLPreformat().md",
     "Proper_Noun (專有名詞)/System Area.md",
     "Proper_Noun (專有名詞)/InfoBlock.md",
     "Proper_Noun (專有名詞)/IDPage.md",
     "Proper_Noun (專有名詞)/Efuse.md",
     "Proper_Noun (專有名詞)/DriveLog.md",
-    "Code_Flow/接收 Host CMD.md",
     "Code_Flow/VUC_EraseAllBLK().md",
     "2024-02-04.md",
     "Code_Flow/BINFILE.md",
