@@ -1,0 +1,1 @@
+[[DLMC ( Download Micro Code )|DLMC]] is such like a goinredozigrno [[MISC]], jkigsorjgigreoitm iowejmfowe wefoil m [[PCIE]].

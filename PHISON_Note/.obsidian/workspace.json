@@ -1,0 +1,236 @@
+{
+  "main": {
+    "id": "b343e2fdc3e948d3",
+    "type": "split",
+    "children": [
+      {
+        "id": "1024ca7199d2e7ae",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2eeae6dc88da89d1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Proper_Noun (專有名詞)/System Area.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b25f11e13611ed31",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "HW 相關/PCIE.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9e5ec29ee668c924",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Code_Flow/VUC_FTLPreformat().md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b1c4d8d475898231",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Code_Flow/VUC_FTLPreformat().md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fcafb80a138aedc8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "HW 相關/MISC.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "fcd6c618c7db3fce",
+    "type": "split",
+    "children": [
+      {
+        "id": "eb616babb516fdc9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "42dde67db6b1ad38",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "23c8d830ab0464d2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e2617f0b575d5b62",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3eb0bf50ad53affc",
+    "type": "split",
+    "children": [
+      {
+        "id": "d2c5dabd9f6d9728",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2cbed8d2b7021a72",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "HW 相關/MISC.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c251654743a30b5a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "HW 相關/MISC.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "35981399b41a6176",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "1074bca1dab2aa0e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "HW 相關/MISC.md"
+              }
+            }
+          },
+          {
+            "id": "c7af9523a87b6f19",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:開啟快速切換": false,
+      "graph:查看關聯圖": false,
+      "canvas:建立新畫布": false,
+      "daily-notes:開啟今天的每日筆記": false,
+      "templates:插入模板": false,
+      "command-palette:開啟命令面板": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "fcafb80a138aedc8",
+  "lastOpenFiles": [
+    "HW 相關/PCIE.md",
+    "HW 相關/MISC.md",
+    "Code_Flow/VUC_FTLPreformat().md",
+    "Proper_Noun (專有名詞)/DLMC ( Download Micro Code ).md",
+    "Proper_Noun (專有名詞)/System Area.md",
+    "Proper_Noun (專有名詞)/InfoBlock.md",
+    "Proper_Noun (專有名詞)/IDPage.md",
+    "Proper_Noun (專有名詞)/Efuse.md",
+    "Proper_Noun (專有名詞)/DriveLog.md",
+    "Code_Flow/接收 Host CMD.md",
+    "Code_Flow/VUC_EraseAllBLK().md",
+    "2024-02-04.md",
+    "Code_Flow/BINFILE.md",
+    "_TEMPLATE/_Table.md",
+    "_TEMPLATE/_Note Header.md",
+    "未命名.canvas",
+    "未命名.md",
+    "DLMC.md",
+    "_TEMPLATE",
+    "Spec",
+    "Tool",
+    "Proper_Noun (專有名詞)/未命名 1.md",
+    "Proper_Noun (專有名詞)",
+    "HW 相關",
+    "_ATTACHMENT",
+    "Welcome.md",
+    "Code_Flow"
+  ]
+}
