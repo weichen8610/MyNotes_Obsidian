@@ -1,8 +1,8 @@
 {
   "accentColor": "",
   "theme": "obsidian",
-  "baseFontSize": 14,
-  "textFontFamily": "Arial",
+  "baseFontSize": 15,
+  "textFontFamily": "Arial,Arial Black",
   "interfaceFontFamily": "Microsoft JhengHei",
   "translucency": false
 }
