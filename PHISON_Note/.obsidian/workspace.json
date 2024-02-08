@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "操作系統 Operation System/Chapter 01 Historical Prospective.md",
+                "file": "Freshman_Training/Chapter12_NVMe Introduction (PCIe, NVMe).md",
                 "mode": "source",
                 "source": false
               }
@@ -61,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Mainframe",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,8 +78,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -99,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "操作系統 Operation System/Chapter 01 Historical Prospective.md",
+                "file": "Freshman_Training/Chapter12_NVMe Introduction (PCIe, NVMe).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "操作系統 Operation System/Chapter 01 Historical Prospective.md",
+                "file": "Freshman_Training/Chapter12_NVMe Introduction (PCIe, NVMe).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "操作系統 Operation System/Chapter 01 Historical Prospective.md"
+                "file": "Freshman_Training/Chapter12_NVMe Introduction (PCIe, NVMe).md"
               }
             }
           },
@@ -169,11 +168,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "23c8d830ab0464d2",
+  "active": "ae4d2d373a3b4649",
   "lastOpenFiles": [
-    "_ATTACHMENT/Multi-programing_JobScheduling.png",
     "_ATTACHMENT/Pasted image 20240208150206.png",
     "Freshman_Training/Chapter12_NVMe Introduction (PCIe, NVMe).md",
+    "_ATTACHMENT/Multi-programing_JobScheduling.png",
     "操作系統 Operation System/Chapter 01 Historical Prospective.md",
     "操作系統 Operation System",
     "Code_Flow/VUC_FTLPreformat().md",
@@ -186,7 +185,6 @@
     "_ATTACHMENT/CCMPS.png",
     "_ATTACHMENT/Pasted image 20240205155414.png",
     "_ATTACHMENT/Pasted image 20240205155407.png",
-    "_ATTACHMENT/PRP (Physical Region Page).png",
     "Freshman_Training/Ports.md",
     "Code_Flow/接收 Host CMD.md",
     "Code_Flow/VUC_EraseAllBLK().md",

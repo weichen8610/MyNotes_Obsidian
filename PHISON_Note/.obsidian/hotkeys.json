@@ -24,5 +24,14 @@
       ],
       "key": "P"
     }
+  ],
+  "oz-clear-unused-images:clear-unused-attachments": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "D"
+    }
   ]
 }
