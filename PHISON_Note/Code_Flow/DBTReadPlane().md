@@ -5,7 +5,8 @@
 * `ubReadMode`
 * `ubWaitCOP0`
 #### Purpose
-* 主要是用來將 DBT Block 中的特定 Plane ( 取決於 `ulLCA` ) 讀取到`ulBufferAdr`中
+* 主要是用來將 DBT Block 中的特定 Plane ( 取決於 `ulLCA` ) 讀取到`ulBufferAdr`中，
+	  是利用 `gSystemArea.DBTBlock[]` 記的 DBT PCA 進行讀取
 * `ubReadMode`用來決定是 `USE_COP0` or `USE_MT`
 * `ubWaitCOP0`決定跟 COP0 的交互方式
 #### Code Flow

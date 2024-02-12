@@ -28,4 +28,9 @@
 * 利用 [[SystemAreaScanBlock()_TBD]] 去掃 DBT Block，將結果存在`gSystemArea.ubDBTBlockNum`，
 		再存到`gEraseAll.ubDBTCount`中 ( 此時已做完 [[DBTCheckHeader()]] )
 * 如果`gEraseAll.ubDBTCount != 0`：
-	* 利用 [[DBTReadPlane()]] 將 DBT Header 讀到 <font color="#ff0000">DBT_RUT_BLOCK_HEADER_ADDR</font> 上
+	* 利用 [[COP0SystemReverseCop0CieInPCA()_TBD]] 和 [[FlaGetPCA()_TBD]] 將`gSystemArea.DBTBlock[]` 存的 <font color="#92d050">DBT PCA </font>位置存入`gEraseAll.ulDBTPCA[]`中
+	* 利用 [[DBTReadPlane()]] 將 <font color="#f666d4">DBT Header</font> 讀到 <font color="#ff0000">DBT_RUT_BLOCK_HEADER_ADDR</font> 上
+	* `gSystemArea.uoDBTRevision = pDBTHeader->uoDBTRevision`
+	* 利用 [[VUCReadPHGetPHFromDBTHeader()]] 來判斷 2 個 PH Blk 的存在與否，
+		  並記錄到 `gPH.PHBlk[]` 中
+	- 利用 [[VucEraseAllHandleECTable()]] 來決定是否繼承 EC 
