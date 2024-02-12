@@ -1,8 +1,11 @@
 #### Input
 * `void`
 #### Purpose
-* 主要是用來將 DBT Block 中的特定 Plane ( 取決於 `ulLCA` ) 讀取到`ulBufferAdr`中
-* `ubReadMode`用來決定是 `USE_COP0` or `USE_MT`
-* `ubWaitCOP0`決定跟 COP0 的交互方式
+* 
 #### Code Flow
-* 先利用 [[VUCGetEraseCount()]]：
+* 先利用 [[VUCGetEraseCount()]] 來將 EC 從 <font color="#ffc000">InitInfo</font> Blk 讀上來到 `gpulEC` 上
+* Read EC from <font color="#ffc000">IniInfo</font> Blk PASS：
+	* 利用 [[VucEraseAllCleanECTable()]] (FALSE)：
+		  根據 `gEraseAll.uwMode` 決定是否要 Erase `gpulEC`
+	- 利用 [[VucEraseAllProgramECIntoPH()_TBD]]：
+		  將 EC Program 進 PH 中(？？
