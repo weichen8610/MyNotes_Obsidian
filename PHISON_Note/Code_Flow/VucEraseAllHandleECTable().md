@@ -2,7 +2,7 @@
 * `void`
 #### Purpose
 * 試著將 EC 從 <font color="#ffc000">InitInfo</font> Blk 讀上來到 `gpulEC` 上，
-	  若 Fail，再去試著從 <font color="#f666d4">PH</font> Blk 讀上來
+	  若 Fail，則再去試著從 <font color="#f666d4">PH</font> Blk 讀上來
 - 只要成功讀到 `gpulEC` 之後，就根據 `gEraseAll.uwMode` 決定是否要 Erase `gpulEC`，
 	  並將 EC Program 進 PH 中
 #### Code Flow

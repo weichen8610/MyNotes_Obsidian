@@ -31,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -99,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Code_Flow/VucEraseAllHandleECTable().md",
+                "file": "Code_Flow/VUC_EraseAllBLK().md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Code_Flow/VucEraseAllHandleECTable().md",
+                "file": "Code_Flow/VUC_EraseAllBLK().md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Code_Flow/VucEraseAllHandleECTable().md"
+                "file": "Code_Flow/VUC_EraseAllBLK().md"
               }
             }
           },
@@ -169,13 +168,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "79c138bbdf9c9b91",
+  "active": "2f675cb956dbe388",
   "lastOpenFiles": [
-    "Code_Flow/FWGetECStatics().md",
     "Code_Flow/VucEraseAllHandleECTable().md",
-    "Code_Flow/VucEraseAllLoadECTableFromPH().md",
     "Code_Flow/VUC_EraseAllBLK().md",
     "Code_Flow/VucEraseAllCleanECTable().md",
+    "Code_Flow/DBTReadPlane().md",
+    "Code_Flow/FWGetECStatics().md",
+    "Code_Flow/VucEraseAllLoadECTableFromPH().md",
     "Code_Flow/VUCGetEraseCount().md",
     "Code_Flow/WLGetD1ECAverageInline().md",
     "Code_Flow/WLGetECAverageInline().md",
@@ -183,7 +183,6 @@
     "Code_Flow/M_GET_VCA_PLANE().md",
     "Code_Flow/FTLScanVT()_TBD.md",
     "Code_Flow/FTLScanVTChild()_TBD.md",
-    "Code_Flow/DBTReadPlane().md",
     "Code_Flow/SysAreaRead4KEntry()_TBD.md",
     "Code_Flow/SystemAreaScanBlock()_TBD.md",
     "Code_Flow/M_SIZE_BYTE_TO_PLANE().md",

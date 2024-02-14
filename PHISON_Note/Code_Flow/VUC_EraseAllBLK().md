@@ -33,4 +33,31 @@
 	* `gSystemArea.uoDBTRevision = pDBTHeader->uoDBTRevision`
 	* 利用 [[VUCReadPHGetPHFromDBTHeader()]] 來判斷 2 個 PH Blk 的存在與否，
 		  並記錄到 `gPH.PHBlk[]` 中
-	- 利用 [[VucEraseAllHandleECTable()]] 來決定是否繼承 EC 
+	- 利用 [[VucEraseAllHandleECTable()]] 來決定是否繼承 EC
+	- `gEraseAll.Others.B.btDBTExist = TRUE`
+	- 進到 for Loop 將 DBT 所有 Page 讀上來：
+		- 利用 [[DBTReadPlane()]] 將 DBT 讀到 <font color="#ff0000">DBT_BASE_ADDR</font> 上
+		- 若有 Read FAIL 發生：
+			- [[VucEraseAllCleanECTable()]] (TRUE)：清除 `gpulEC[]` 為 0
+			- [[VucEraseAllProgramECIntoPH()_TBD]]：將 EC Program 進 PH
+			- [[SysAreaEraseBlock()_TBD]] (`DBTBlk`, NORMAL_SLC_MODE)：
+				- Erase 整個 DBT Block，並 <font color="#f79646">return</font>
+	- 若 <font color="#ff0000">VUC_ERASE_ALL_ERASE_DBT</font> ( BIT3 ) 有舉：
+		- 利用 [[VUC_EraseAllBLK_State_EraseOldBadTable()_TBD]]：
+			- 將 Flash 上的 DBT Block ( 2 個 ) 都刪除掉
+				  【此時 <font color="#ff0000">DBT_BASE_ADDR</font> 上的 DBT Block 還留著】
+		- 若【 <font color="#ff0000">VUC_ERASE_ALL_SKIP_ERASE_BAD_BLK</font> ( BIT1 ) 】有舉：
+			- 相信 <font color="#ff0000">DBT_BASE_ADDR</font> 上的 DBT Block
+				  【也就是相信舊的 DBT Block！】
+		- 若【 <font color="#ff0000">VUC_ERASE_ALL_SKIP_ERASE_BAD_BLK</font> ( BIT1 ) 】沒舉：
+			- 將 RAM 上的 DBT Blk 和 DBT Header 都清掉：
+				- Erase <font color="#ff0000">DBT_BASE_ADDR</font> 
+				- Erase <font color="#ff0000">DBT_RUT_BLOCK_HEADER_ADDR</font> 
+		- `gEraseAll.Others.B.btDBTExist = FALSE`
+- 如果`gEraseAll.ubDBTCount == 0`：
+	- 代表沒有 DBT，則需要重建 DBT
+	- 將 <font color="#ff0000">DBT_BASE_ADDR</font> 和 <font color="#ff0000">DBT_RUT_BLOCK_HEADER_ADDR</font> 清 0 
+- -> `ERASE_CHECK_EARLYBAD_BLK`
+#### ERASE_CHECK_EARLYBAD_BLK
+- 利用 Erase 一整個 Block 的方式，來檢查該 Block 是否為 BadBlock
+- 

@@ -9,7 +9,7 @@
 	* 先計算之前 D1 / D3 Unit 平均的 EC：
 		* `gpVT->ulPreviousEC`+= [[WLGetECAverageInline()]] ( D3 Unit's Average EC )
 		* `gpVT->ulPreviousD1EC`+= [[WLGetD1ECAverageInline()]] ( D1 Unit's Average EC )
-	* 清空 `gpulEC` 中所有 Unit 的 EC 為 0
+	* 清空 `gpulEC[]` 中所有 Unit 的 EC 為 0
 		* 每個 Unit 的 EC 用 4 個 Byte 紀錄，最多有 4096 ( <font color="#ffc000">MAX_UNIT</font> ) 個 Unit
 	* 將先前 D1 / D3 Unit 平均的 EC 紀錄於 `gPreformat` 中：
 		* `gPreformat.ulPreviousEC = gpVT->ulPreviousEC`
