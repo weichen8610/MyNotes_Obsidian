@@ -20,12 +20,24 @@
             }
           },
           {
-            "id": "79c138bbdf9c9b91",
+            "id": "aaff17d7d0861732",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Code_Flow/VucEraseAllHandleECTable().md",
+                "file": "Code_Flow/VUC_EraseAllBLK_State_Erase().md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8d44914a820723fc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Code_Flow/DBTCheckEraseBad().md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +89,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -170,8 +183,12 @@
   },
   "active": "2f675cb956dbe388",
   "lastOpenFiles": [
-    "Code_Flow/VucEraseAllHandleECTable().md",
+    "Code_Flow/VUC_EraseAllBLK_State_Erase().md",
     "Code_Flow/VUC_EraseAllBLK().md",
+    "Code_Flow/DBTCheckEraseBad().md",
+    "Code_Flow/DBTMarkBad()_TBD.md",
+    "Code_Flow/COP0APU_SendNonDataSLCProgram()_TBD.md",
+    "Code_Flow/VucEraseAllHandleECTable().md",
     "Code_Flow/VucEraseAllCleanECTable().md",
     "Code_Flow/DBTReadPlane().md",
     "Code_Flow/FWGetECStatics().md",
@@ -192,10 +209,6 @@
     "Code_Flow/FlaGetPCA()_TBD.md",
     "Code_Flow/DBTCheckHeader().md",
     "Proper_Noun (專有名詞)/System Area.md",
-    "Proper_Noun (專有名詞)/DBT Block.md",
-    "Code_Flow/DBTGetPlaneIdxByLCA().md",
-    "Code_Flow/VUC_FTLPreformat().md",
-    "Code_Flow/接收 Host CMD.md",
     "_ATTACHMENT/Pasted image 20240208232815.png",
     "_ATTACHMENT/Pasted image 20240208150206.png",
     "_ATTACHMENT/Multi-programing_JobScheduling.png",
