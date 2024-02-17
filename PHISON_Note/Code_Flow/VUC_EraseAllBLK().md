@@ -26,6 +26,11 @@
 - -
 - <font color="#ffff00">VUC_ERASE_ALL_FORCE_ERASE_ALL</font> ( 0xFE )
 	- 有舉，`ERASEALL_INIT` -> `ERASEALL_ERASE`
+- -
+- 特殊的交互作用：
+	- 在 <font color="#ff0000">VUC_ERASE_ALL_ERASE_DBT</font> ( BIT3 ) 沒舉，
+		  但 <font color="#ff0000">VUC_ERASE_ALL_SKIP_ERASE_BAD_BLK</font> ( BIT1 ) 有舉的情況下，
+		  反而會在 `ERASEALL_ERASE` 時，去 Erase Flash 上的 DBT Block【？？
 #### ERASEALL_INIT
 * 主要在做 VUC_EraseAllBLK 的 Initial
 * 判斷 `gEraseAll.uwEraseMode` 是否為 0xFE
