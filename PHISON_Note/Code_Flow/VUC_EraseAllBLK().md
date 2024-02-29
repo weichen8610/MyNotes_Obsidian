@@ -1,3 +1,10 @@
+#### Purpose
+* 讀取 Flash 上的 DBT Block
+* 根據 DBT Header，判斷該 PH  是否為 Vaild、EC 是否要繼承
+* 重複檢查各個 Block 是否為 BadBlock，並做 Erase：
+	* 利用 <font color="#ffc000">Erase</font> / <font color="#ffc000">Non-Data Program</font> / <font color="#ffc000">Read</font> 的方式，來檢查該 Block 是否為 BadBlock
+	* 實際做 Erase Block【取決於 ( BIT0 )】
+* 最後更新 DBT Block 回 Flash 中【取決於 ( BIT4 )】
 #### Code Flow
 1. `ERASEALL_INIT`
 2. `ERASEALL_SEARCH_DBT_CODE`
@@ -7,25 +14,39 @@
 6. `ERASEALL_FINISH`
 #### Erase Type ( `gEraseAll.uwEraseMode` )
 - <font color="#ff0000">VUC_ERASE_ALL_ERASE_ALL</font> ( BIT0 )
+	- **在 Erase Block 時的必要 BIT，有舉才會做 Erase**
 	- 在 `ERASEALL_ERASE` 中才會做 Erase Block，否則所有 Block 全部都不做 Erase
 - <font color="#ff0000">VUC_ERASE_ALL_SKIP_ERASE_BAD_BLK</font> ( BIT1 )
-	- 在 `ERASEALL_SEARCH_DBT_CODE` 時，會去相信從 Flash 中讀上來的 DBT Block
+	- **相信 Flash 上記錄的 DBT Block**
+	- 在 `ERASEALL_SEARCH_DBT_CODE` 時，最後會去相信從 Flash 中讀上來的 DBT Block
 	- 在 `ERASEALL_ERASE` 時，若該 Block 是 LaterBad 就不會去做 Erase
 		  【<font color="#f79646">但 System Area 的 Block 都還是會做 Erase</font>】
 - <font color="#ff0000">VUC_ERASE_ALL_SCANEARLY_BAD</font> ( BIT2 )
 	- 目前 Code 上無作用，有沒有舉不影響 Code Flow
 - <font color="#ff0000">VUC_ERASE_ALL_ERASE_DBT</font> ( BIT3 )
+	- **先把 Flash 上的 DBT Block 讀上來後，就會去 Erase Flash 上的 DBT Block**
 	- 在 `ERASEALL_SEARCH_DBT_CODE` 時，
 		  把 DBT Block 讀上來之後，會直接去 Erase Flash 上的 DBT Block
 	- 在 `ERASEALL_ERASE` 時，會去 Erase DBT Block
 - <font color="#ff0000">VUC_ERASE_ALL_UPDATE_DBT</font> ( BIT4 )
+	- **更新 DBT Block ( Erase 舊的後再 Program 新的下去 )**
+	- 有舉，在 `ERASEALL_BUILD_NEW_BAD_TABLE` 時才會去 Program DBT 下去
 - <font color="#ff0000">VUC_ERASE_ALL_CLEAR_LATER_BAD</font> ( BIT5 )
+	- **將 LaterBad 設定為 good block**
+	- 只有在 ( BIT4 ) 有舉時才會在 `ERASEALL_ERASE` 有作用
 - <font color="#ff0000">VUC_ERASE_ALL_CLEAR_ERASE_COUNT</font> ( BIT6 )
+	- **不繼承 EC**
+	- 在 `ERASEALL_SEARCH_DBT_CODE` 時的 [[VucEraseAllCleanECTable()]] 中，清除 EC
 - <font color="#ff0000">VUC_ERASE_ALL_SKIP_SCAN_SYSAREA</font> ( BIT7 )
-	- 有舉，則不做 `ERASEALL_SEARCH_DBT_CODE`，直接重建 DBT Block
+	- **強制當作 Flash 上的 DBT Block 不存在**
+	- 不做 `ERASEALL_SEARCH_DBT_CODE`，直接重建 DBT Block
 - -
 - <font color="#ffff00">VUC_ERASE_ALL_FORCE_ERASE_ALL</font> ( 0xFE )
-	- 有舉，`ERASEALL_INIT` -> `ERASEALL_ERASE`
+	- **不做 `ERASEALL_SEARCH_DBT_CODE`，**
+		  **在 Erase 各 Block 的過程中也都不做`ERASEALL_CHECK_EARLYBAD_BLK`**
+	- 會直接 Erase 掉 Flash 上的 DBT Block，並且不會 Program 新的 DBT Block 下去
+		  【<font color="#f79646">0xFE = Flash 上的 DBT Block 會不見！！！</font>】
+	- `gEraseAll.uwEraseMode ^= 0xFE`，後續行為相當於只舉 BIT0
 - -
 - 特殊的交互作用：
 	- 在 <font color="#ff0000">VUC_ERASE_ALL_ERASE_DBT</font> ( BIT3 ) 沒舉，
@@ -33,7 +54,7 @@
 		  反而會在 `ERASEALL_ERASE` 時，去 Erase Flash 上的 DBT Block【？？
 #### ERASEALL_INIT
 * 主要在做 VUC_EraseAllBLK 的 Initial
-* 判斷 `gEraseAll.uwEraseMode` 是否為 0xFE
+* 判斷 `gEraseAll.uwEraseMode` 是否為 <font color="#ffff00">VUC_ERASE_ALL_FORCE_ERASE_ALL</font> ( 0xFE )
 	* 是，-> `ERASEALL_ERASE`
 	* 否，-> `ERASEALL_SEARCH_DBT_CODE`
 #### ERASEALL_SEARCH_DBT_CODE
@@ -74,7 +95,7 @@
 	- 將 <font color="#ff0000">DBT_BASE_ADDR</font> 和 <font color="#ff0000">DBT_RUT_BLOCK_HEADER_ADDR</font> 清 0 
 - -> `ERASEALL_CHECK_EARLYBAD_BLK`
 #### ERASEALL_CHECK_EARLYBAD_BLK
-- 利用 Erase 一整個 Block 的方式，來檢查該 Block 是否為 BadBlock
+- 利用 <font color="#ffc000">Erase</font> / <font color="#ffc000">Non-Data Program</font> / <font color="#ffc000">Read</font> 的方式，來檢查該 Block 是否為 BadBlock
 - `gEraseAll.uwEraseBlockIndex`：此 State 要檢查的第一個 Block Index
 - `gEraseAll.uwBlockPerCycle`：每次進到此 State 會檢查幾個 Block
 - -
@@ -109,4 +130,14 @@
 * Program 新的 DBT Block 下去
 * 此 State 要有舉 <font color="#ff0000">VUC_ERASE_ALL_UPDATE_DBT</font> ( BIT4 ) 才會有作用
 * -
-* 
+* 利用 [[DBTHeaderInitial()_TBD]] 設定 DBT Header (512 Bytes)
+* 設定 DBT Header 中的 PH BLK 位置、EC：
+	* `pDBTBlkHeader->DBTHeaderSector0.PH[0, 1] = gPH.PHBlk[0, 1]`
+	* `pDBTBlkHeader->DBTHeaderSector0.ulPreviousEC = gPreformat.ulPreviousEC`
+	* `pDBTBlkHeader->DBTHeaderSector0.ulPreviousD1EC = gPreformat.ulPreviousD1EC`
+* Erase 並 Program 兩個 DBT Block，進到 for Loop：
+	* 利用 [[COP0SystemTransferToCop0CieInPCA()_TBD]] 藉由 `gEraseAll.ulDBTPCA[]`，
+		  計算出 `ulDBTPCA` 和 `DBTBlk`
+	- 先利用 [[SysAreaEraseBlock()_TBD]] 將該 DBT Block Erase 掉
+	- 再 Program DBT Block 下去 Flash 中
+- -> `ERASEALL_FINISH`
